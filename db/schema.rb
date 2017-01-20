@@ -348,13 +348,13 @@ ActiveRecord::Schema.define(version: 20170125123628) do
     t.string   "census_code"
   end
 
-  create_table "geozones_poll_questions", force: :cascade do |t|
+  create_table "geozones_polls", force: :cascade do |t|
     t.integer "geozone_id"
-    t.integer "question_id"
+    t.integer "poll_id"
   end
 
-  add_index "geozones_poll_questions", ["geozone_id"], name: "index_geozones_poll_questions_on_geozone_id", using: :btree
-  add_index "geozones_poll_questions", ["question_id"], name: "index_geozones_poll_questions_on_question_id", using: :btree
+  add_index "geozones_polls", ["geozone_id"], name: "index_geozones_polls_on_geozone_id", using: :btree
+  add_index "geozones_polls", ["poll_id"], name: "index_geozones_polls_on_poll_id", using: :btree
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
@@ -923,8 +923,8 @@ ActiveRecord::Schema.define(version: 20170125123628) do
   add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
-  add_foreign_key "geozones_poll_questions", "geozones"
-  add_foreign_key "geozones_poll_questions", "poll_questions", column: "question_id"
+  add_foreign_key "geozones_polls", "geozones"
+  add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
