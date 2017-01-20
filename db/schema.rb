@@ -477,7 +477,6 @@ ActiveRecord::Schema.define(version: 20170125123628) do
     t.datetime "hidden_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "all_geozones",        default: false
     t.tsvector "tsv"
   end
 
