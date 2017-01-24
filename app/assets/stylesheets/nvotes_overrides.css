@@ -1,1 +1,10 @@
 /* This styles overrides default theme for nvotes iframe */
+
+.container {
+  background: red;
+  width: 100%;
+}
+
+h3 {
+  color: blue;
+}
