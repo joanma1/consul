@@ -1,10 +1,44 @@
 /* This styles overrides default theme for nvotes iframe */
 
-#content .container {
-  background: red;
-  width: 100%;
+#content {
+  padding: 24px;
 }
 
-#content .container h3 {
-  color: blue;
+[av-booth] .container {
+  width: 100% !important;
+}
+
+[av-booth] .navbar {
+  padding: 12px;
+  position: inherit;
+}
+
+[av-booth] .navbar-unfixed-top {
+  margin-top: 0;
+}
+
+[av-booth] .avb-top-navbar span .ng-scope {
+  background: #FAFAFA;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  font-weight: bold;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+[av-booth] .btn {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin: 0 auto;
+  max-width: 240px;
+}
+
+[av-booth] .btn-success {
+  background-color: #004A83;
+}
+
+[av-booth] .btn-success:hover {
+  background-color: #002D50;
 }
