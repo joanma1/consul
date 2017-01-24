@@ -1,6 +1,6 @@
 /* This styles overrides default theme for nvotes iframe */
 
-#content {
+#ng-app #content {
   padding: 24px;
 }
 
