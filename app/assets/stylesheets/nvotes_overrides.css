@@ -35,7 +35,7 @@
   max-width: 240px;
 }
 
-[av-booth] .btn-success {
+.basic-booth-layout .btn-success, [av-booth] .btn-success {
   background-color: #004A83;
 }
 
