@@ -45,6 +45,14 @@
 
 /* testing */
 
+.test {
+  background: yellow;
+  color: blue;
+  display: inline-block;
+  font-size: 30px:
+  padding: 12px;
+}
+
 [av-booth] .avb-content, [av-booth] .busy-gui, [av-booth] .navbar, [av-booth] .navbar-unfixed-top, [av-booth] .start-screen {
 color: red;
 }
