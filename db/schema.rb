@@ -427,6 +427,18 @@ ActiveRecord::Schema.define(version: 20170125123628) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+  create_table "poll_answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "author_id"
+    t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poll_answers", ["author_id"], name: "index_poll_answers_on_author_id", using: :btree
+  add_index "poll_answers", ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer", using: :btree
+  add_index "poll_answers", ["question_id"], name: "index_poll_answers_on_question_id", using: :btree
+
   create_table "poll_booth_assignments", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "poll_id"
