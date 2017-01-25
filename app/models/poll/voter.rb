@@ -3,9 +3,16 @@ class Poll
     belongs_to :poll
     belongs_to :booth_assignment
     belongs_to :answer
+    belongs_to :user
 
     validates :poll, presence: true
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
+
+    devise :database_authenticatable
+
+    def name
+      "Edward"
+    end
 
     def census_api_response
       @census_api_response ||= CensusApi.new.call(document_type, document_number)
@@ -36,7 +43,8 @@ class Poll
         gender: user.gender,
         geozone_id: user.geozone_id,
         age: user.age,
-        answer_id: answer_id
+        answer_id: answer_id,
+        user: user
       )
     end
 
@@ -50,6 +58,10 @@ class Poll
           now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
         end
       end
+
+    def poll_voter?
+      true
+    end
 
   end
 end

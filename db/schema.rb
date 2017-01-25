@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< 2bbe11fe67689305170669098c6b08241a05858a
-ActiveRecord::Schema.define(version: 20170125123628) do
-=======
-ActiveRecord::Schema.define(version: 20170125114952) do
->>>>>>> changes poll_voters to optionally reference an answer
+ActiveRecord::Schema.define(version: 20170125212842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -526,6 +522,8 @@ ActiveRecord::Schema.define(version: 20170125114952) do
     t.string   "gender"
     t.integer  "geozone_id"
     t.integer  "answer_id"
+    t.string   "encrypted_password"
+    t.integer  "user_id"
   end
 
   add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree
@@ -536,7 +534,8 @@ ActiveRecord::Schema.define(version: 20170125114952) do
     t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.boolean  "published",      default: false
+    t.boolean  "published",          default: false
+    t.boolean  "geozone_restricted", default: false
     t.string   "nvotes_poll_id"
   end
 

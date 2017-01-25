@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="small-12 medium-6 column">
-    <form>
+    <%= form_for @voter, url: officing_poll_voters_path do %>
 
       <label><%= t("officing.voters.new.document_type_label") %></label>
       <select>
@@ -15,6 +15,6 @@
       <input type="text" placeholder="<%= t("officing.voters.new.document_number") %>">
 
       <input type="submit" value="<%= t("officing.voters.new.submit") %>" class="button">
-    </form>
+    <% end %>
   </div>
 </div>

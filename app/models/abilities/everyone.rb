@@ -22,6 +22,8 @@ module Abilities
       can [:search, :read], Annotation
 
       can :new, DirectMessage
+
+      can [:read, :create, :thanks], ::Nvote
     end
   end
 end

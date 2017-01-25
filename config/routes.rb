@@ -383,7 +383,10 @@ Rails.application.routes.draw do
   namespace :officing do
     resources :polls, only: [:index] do
       resources :recounts, only: [:new, :create]
-      resources :voters, only: [:new, :show]
+      resources :voters, only: [:new, :show, :create]
+      resources :votes, only: [:new] do
+        get :thanks, on: :collection
+      end
     end
     root to: "dashboard#index"
   end

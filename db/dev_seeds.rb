@@ -770,7 +770,7 @@ puts "Active Polls"
   poll = Poll.create(name: "Active Poll #{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
-                     geozone_restricted: true,
+                     geozone_restricted: [true, false].sample,
                      geozones: Geozone.reorder("RANDOM()").limit(3),
                      nvotes_poll_id: 128
                     )
@@ -838,6 +838,15 @@ puts "Creating Poll Question from Proposals"
   question.save!
 
   puts " #{question.title} (from proposal)"
+end
+
+puts "Creating Poll Voters"
+
+(1..10).each do
+  poll = Poll.all.sample
+  document_number = Faker::Number.number(10)
+  user = User.all.sample
+  Poll::Voter.create!(poll: poll, document_number: document_number, user: user)
 end
 
 puts "Creating Successful Proposals"
