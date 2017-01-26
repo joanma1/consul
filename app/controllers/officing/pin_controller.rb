@@ -1,9 +1,11 @@
 class Officing::PinController < Officing::BaseController
+  skip_before_action :authenticate_user!
   skip_before_action :verify_officer
 
   layout "nvotes"
 
   def new
+    sign_out
     @pin = ""
   end
 

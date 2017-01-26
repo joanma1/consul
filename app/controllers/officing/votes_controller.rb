@@ -7,4 +7,10 @@ class Officing::VotesController < Officing::BaseController
     @poll = Poll.first
   end
 
+  #Agora Callback
+  def create
+    sign_out
+    redirect_to new_officing_poll_pin_path
+  end
+
 end

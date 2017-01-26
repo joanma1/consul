@@ -383,7 +383,10 @@ Rails.application.routes.draw do
   namespace :officing do
     resources :polls, only: [:index] do
       resources :recounts, only: [:new, :create]
-      resources :voters, only: [:new, :show, :create]
+      resources :voters, only: [:new, :show, :create] do
+        post :vote_with_tablet
+        post :vote_in_booth
+      end
       resources :votes, only: [:new]
       resource :pin, only: [:new, :create], controller: "pin"
     end

@@ -16,13 +16,25 @@
 
 <div class="callout success">
   <%= t("officing.voters.show.can_participate") %>
+  En estas Votaciones
 </div>
+<% @polls.each do |poll| %>
+  <div><%= poll.name %></div>
+<% end %>
 
-<div class="small-12 medium-6 large-4">
-  <form>
-    <input type="submit" value="<%= t("officing.voters.show.submit") %>" class="button success expanded">
-  </form>
-</div>
+<% if true#officer.has_tablet? %>
+  <div class="small-12 medium-6 large-4">
+    <%= button_to "Votar con tablet",
+                  officing_poll_voter_vote_with_tablet_path(@polls.first, @voter),
+                  class: "button success expanded" %>
+  </div>
+<% else %>
+  <div class="small-12 medium-6 large-4">
+    <%= button_to t("officing.voters.show.submit"),
+                  officing_poll_voter_vote_in_booth_path(@polls.first, @voter),
+                  class: "button success expanded" %>
+  </div>
+<% end %>
 
 
 <div class="callout success">
