@@ -121,6 +121,7 @@ end
 admin = create_user('admin@madrid.es', 'admin')
 admin.create_administrator
 admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
+admin.create_poll_officer
 
 moderator = create_user('mod@madrid.es', 'mod')
 moderator.create_moderator
@@ -821,8 +822,8 @@ puts "Creating Poll Officer Assignments"
 
 #10.times.each_with_index do |i|
   #Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
-    booth_assignment = Poll::BoothAssignment.first
-    Poll::OfficerAssignment.create!(officer: Poll::Officer.first,
+    booth_assignment = Poll.first.booth_assignments.first
+    Poll::OfficerAssignment.create!(officer: Administrator.first.user.poll_officer,
                                     booth_assignment: booth_assignment,
                                     date: booth_assignment.poll.starts_at)
   #end
