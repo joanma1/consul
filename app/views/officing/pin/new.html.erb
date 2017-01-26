@@ -1,0 +1,8 @@
+<div>
+  Gracias por participar. Por favor dale el tablet al Presidente.
+</div>
+
+<%= form_for @pin, url: officing_poll_pin_path do |f| %>
+  <%= f.text_field :pin, placeholder: 'Introduce tu pin' %>
+  <%= f.submit "Enviar" %>
+<% end %>

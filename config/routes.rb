@@ -384,9 +384,8 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       resources :recounts, only: [:new, :create]
       resources :voters, only: [:new, :show, :create]
-      resources :votes, only: [:new] do
-        get :thanks, on: :collection
-      end
+      resources :votes, only: [:new]
+      resource :pin, only: [:new, :create], controller: "pin"
     end
     root to: "dashboard#index"
   end

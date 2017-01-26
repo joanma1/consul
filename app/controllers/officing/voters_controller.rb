@@ -8,7 +8,7 @@ class Officing::VotersController < Officing::BaseController
   end
 
   def create
-    #create_voter
+    #Voter.create(poll: poll, document_number: voter_params[:document_number])
     sign_in_voter
     if true#officer.has_tablet?
       redirect_to new_officing_poll_vote_path
