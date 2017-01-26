@@ -14,8 +14,6 @@ class Ability
         self.merge Abilities::Administrator.new(user)
       elsif user.moderator?
         self.merge Abilities::Moderator.new(user)
-      elsif user.poll_officer?
-        self.merge Abilities::Officer.new(user)
       else
         self.merge Abilities::Common.new(user)
       end
