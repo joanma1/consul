@@ -1,6 +1,6 @@
 /* This styles overrides default theme for nvotes iframe */
 
-#ng-app #content {
+#content {
   padding: 24px;
 }
 
@@ -17,6 +17,23 @@
   margin-top: 0;
 }
 
+.basic-booth-layout .wrapper-unfixed:after, 
+[av-booth] .wrapper-unfixed:after {
+  content: none;
+}
+
+.options-row h3 {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+[avb-simultaneous-questions-screen] .opt {
+  border: 1px solid #DEE0E3;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
 [av-booth] .avb-top-navbar span .ng-scope {
   background: #FAFAFA;
   border-radius: 6px;
@@ -25,6 +42,14 @@
   font-weight: bold;
   padding: 12px;
   text-transform: uppercase;
+}
+
+[av-booth] .affix-bottom p {
+  background-color: #D9EDF7;
+  border: 1px solid #BCE8F1;
+  color: #31708F;
+  margin: 24px 0;
+  padding: 24px;
 }
 
 [av-booth] .btn {
@@ -42,17 +67,3 @@
 [av-booth] .btn-success:hover {
   background-color: #002D50;
 }
-
-/* testing */
-
-.test {
-  background: red;
-  color: blue;
-  display: inline-block;
-  font-size: 30px:
-  padding: 12px;
-}
-
-[av-booth] .avb-content, [av-booth] .busy-gui, [av-booth] .navbar, [av-booth] .navbar-unfixed-top, [av-booth] .start-screen {
-color: red;
-} 
