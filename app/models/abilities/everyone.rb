@@ -23,7 +23,7 @@ module Abilities
 
       can :new, DirectMessage
 
-      can [:read, :create, :thanks], ::Nvote
+      can [:read, :create, :thanks], ::Poll::Nvote
     end
   end
 end
