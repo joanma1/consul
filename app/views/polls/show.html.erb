@@ -33,6 +33,9 @@
   </div>
 </div>
 
+<% poll = Poll.first %>
+<%= link_to "Votar con Nvotes", create_vote_path(poll), data: { no_turbolink: true } %>
+
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
     <% @questions.each do |question| %>
