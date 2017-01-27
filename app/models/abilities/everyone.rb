@@ -11,7 +11,7 @@ module Abilities
       can [:stats, :results], SpendingProposal
 
       can :read, Poll
-      can :read, Poll::Question
+      can :read, ::Poll::Question
 
       can [:read, :welcome], Budget
       can [:read, :print], Budget::Investment
