@@ -534,9 +534,9 @@ ActiveRecord::Schema.define(version: 20170125212842) do
     t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
+    t.string   "nvotes_poll_id"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
-    t.string   "nvotes_poll_id"
   end
 
   create_table "probe_options", force: :cascade do |t|

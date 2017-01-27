@@ -771,6 +771,7 @@ puts "Active Polls"
   poll = Poll.create(name: "Active Poll #{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
+                     nvotes_poll_id: 128,
                      geozone_restricted: false)
   puts "    #{poll.name}"
 end
@@ -784,10 +785,6 @@ end
                     )
   puts "    #{poll.name}"
 end
-
-
-
-
 
 puts "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
