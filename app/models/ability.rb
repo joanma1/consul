@@ -8,7 +8,6 @@ class Ability
 
     if user # logged-in users
       self.merge Abilities::Valuator.new(user) if user.valuator?
-      self.merge Abilities::Poll::Voter.new(user) if user.class == Poll::Voter
 
       if user.administrator?
         self.merge Abilities::Administrator.new(user)
