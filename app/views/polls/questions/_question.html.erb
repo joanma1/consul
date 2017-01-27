@@ -1,3 +1,6 @@
+<% poll = Poll.first %>
+<%= link_to "Votar con Nvotes", create_vote_path(poll), data: { no_turbolink: true } %>
+
 <div id="<%= dom_id(question) %>" class="poll-question">
   <h3>
     <%= link_to question.title, question_path(question) %>

@@ -8,12 +8,6 @@ class Poll
     validates :poll, presence: true
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
 
-    devise :database_authenticatable
-
-    def name
-      "Edward"
-    end
-
     def census_api_response
       @census_api_response ||= CensusApi.new.call(document_type, document_number)
     end
@@ -58,10 +52,6 @@ class Poll
           now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
         end
       end
-
-    def poll_voter?
-      true
-    end
 
   end
 end
