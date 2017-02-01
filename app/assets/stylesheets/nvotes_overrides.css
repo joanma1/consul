@@ -53,16 +53,13 @@
   padding: 24px;
 }
 
-[av-booth] .btn {
+[av-booth] .btn-success {
+  background-color: #004A83;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   margin: 0 auto;
   max-width: 240px;
-}
-
-.basic-booth-layout .btn-success, [av-booth] .btn-success {
-  background-color: #004A83;
 }
 
 [av-booth] .btn-success:hover {
