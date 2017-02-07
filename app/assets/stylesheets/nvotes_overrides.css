@@ -17,6 +17,11 @@
   margin-top: 0;
 }
 
+.basic-booth-layout .navbar-unfixed-top h1, 
+[av-booth] .navbar-unfixed-top h1 {
+  margin-bottom: 36px;
+}
+
 .basic-booth-layout .wrapper-unfixed:after, 
 [av-booth] .wrapper-unfixed:after {
   content: none;
