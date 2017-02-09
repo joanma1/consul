@@ -39,6 +39,11 @@ en:
       title: "#HumanRightsPlan"
       text_html: "Participate until <u>November 4</u>!"
   cards:
+    linea_madrid:
+      title: "Atención a la ciudadanía de Línea Madrid"
+      text: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+      date_html: "Participa hasta el <strong>10 de marzo</strong>"
+      button: "Más información"
     plaza:
       title: "Remodeling Plaza España"
       text: "The preselection of the projects is over. You can already see the results."
@@ -72,8 +77,10 @@ en:
     investment_title: "Proyecto de Presupuestos participativos"
     investment_info: "Decide a qué se destina una parte del presupuesto municipal."
   nvotes:
+    can_participate: "You can participate in the following voting:"
     thanks: "Thank you very much for your participation!"
-    finish: "Finish voting"
+    exit: "Exit voting"
+    finish: "Yes, exit voting"
     officer_title: "Officer"
-    officer_message_html: "Thank you for your collaboration, <strong>please give the device to the Officer</strong>."
     tablet: "Vote on tablet"
+    are_you_sure: "Are you sure you're done?"
