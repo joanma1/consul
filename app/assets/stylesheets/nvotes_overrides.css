@@ -27,8 +27,7 @@
   content: none;
 }
 
-.basic-booth-layout .affix-bottom, 
-[av-booth] .affix-bottom {
+[av-booth] [avb-simultaneous-questions-screen] .affix-bottom {
   position: initial;
 }
 
