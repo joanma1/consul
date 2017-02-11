@@ -20,6 +20,7 @@ class Poll < ActiveRecord::Base
   scope :expired,  -> { where('ends_at < ?', Time.current) }
   scope :published,  -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
+  scope :with_nvotes, -> { where.not(nvotes_poll_id: nil) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
@@ -82,11 +83,11 @@ class Poll < ActiveRecord::Base
     end
   end
 
-  def server_shared_key
+  def self.server_shared_key
     Rails.application.secrets["nvotes_shared_key"] || ENV["nvotes_shared_key"]
   end
 
-  def server_url
+  def self.server_url
     Rails.application.secrets["nvotes_server_url"] || ENV["nvotes_server_url"]
   end
 
